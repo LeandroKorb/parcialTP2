@@ -1,4 +1,4 @@
-import TransaccionMemModel from "./DAO/transactions.models.mem.js";
+import TransaccionMemModel from "./DAO/transaccion.model.mem.js";
 
 class Factory {
   static get(persistencia) {

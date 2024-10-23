@@ -1,25 +1,25 @@
-import transaccionController from "../controllers/transactionController.js";
+import TransaccionController from "../controllers/transaccion.controller.js";
 import express from "express";
 
 class Router {
   constructor() {
     this.router = express.Router();
-    this.controller = new transaccionController();
+    this.controller = new TransaccionController();
   }
 
   start() {
-    this.router.post("/transaccion", transaccionController.createTransaction());
+    this.router.post("/transaccion", TransaccionController.postTransaction());
 
-    this.router.get("/transaccion", transaccionController.getAllTransactions());
+    this.router.get("/transaccion", TransaccionController.getAllTransactions());
 
     this.router.get(
       "/transaccion/count",
-      transaccionController.getTransactionCount()
+      TransaccionController.getTransactionCount()
     );
 
     this.router.delete(
       "/transaccion/:id",
-      transaccionController.deleteTransaction()
+      TransaccionController.deleteTransaction()
     );
   }
 }
